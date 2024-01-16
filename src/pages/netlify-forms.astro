@@ -53,25 +53,73 @@ import Layout from '../components/layout.astro';
   description="Turn any HTML form into a functional form that can receive submissions with a single line of code."
 >
   <main>
-    <h2 class="heading">Make this form functional</h2>
+    <h2 class="heading">Before getting your mug, a few questions</h2>
 
     <form
       class="form"
       method="POST"
-      name="contact"
+      name="swag-request"
       action="/success"
     >
-      <label htmlFor="name">Name</label>
+    <fieldset>
+      <legend>Your name</legend>
       <input type="text" id="name" name="name" />
+    </fieldset>
 
-      <label htmlFor="email">Email</label>
-      <input type="email" id="email" name="email" />
+      <fieldset>
+        <legend>Do you agree that Rachel is the coolest girl in the world</legend>
+        
+        <div>
+          <input type="radio" id="yes" name="rachel-cool" value="yes" />
+          <label for="yes">Yes</label>
+        </div>
 
-      <label htmlFor="message">Message</label>
-      <textarea name="message"></textarea>
+        <div>
+          <input type="radio" id="yes-obviously-shes-cool" name="rachel-cool" value="yes-obviously-shes-cool" />
+          <label for="yes-obviously-shes-cool">Yes, obviously, there is no one as cool as her</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Is this website a little much for two people that haven't met yet</legend>
+
+        <div>
+          <input type="radio" id="yes" name="website-too-much" value="yes" />
+          <label for="yes">Yes</label>
+        </div>
+
+        <div>
+          <input type="radio" id="yes-obviously-its-sweet" name="website-too-much" value="yes-obviously-its-sweet" />
+          <label for="yes-obviously-its-sweet">Yes, but I think it's sweet :)</label>
+        </div>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Should Rachel and Jason go on a date and see if sparks fly</legend>
+        <div>
+          <input type="radio" id="too-soon" name="date" value="too-soon" />
+          <label for="too-soon">Too soon to tell</label>
+        </div>
+        <div>
+          <input type="radio" id="yes" name="date" value="yes" />
+          <label for="yes">Yes</label>
+        </div>
+        <div>
+          <input type="radio" id="yes-obviously-i-want-sparks" name="date" value="yes-obviously-i-want-sparks" />
+          <label for="yes-obviously-i-want-sparks">Yes, obviously, I want to see sparks fly</label>
+          </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>While we tried to be comprehensive in our form, please leave any remarks not captured by the above here</legend>
+        <div>
+          <textarea name="message"></textarea>
+        </div>
+      </fieldset>
 
       <button type="submit" class="button">
-        Send
+        Give me my mug!
       </button>
     </form>
     <p class="docs">
