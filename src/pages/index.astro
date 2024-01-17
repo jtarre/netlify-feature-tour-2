@@ -3,106 +3,178 @@ import Layout from '../components/layout.astro';
 ---
 
 <style>
-.steps {
-  background: var(--light);
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: min(90vw, 250px);
-  justify-content: center;
-  margin-top: 3rem;
-  padding: 5rem 5vw;
-  width: 100vw;
-}
-
-@media (min-width: 550px) {
-  .steps {
-    grid-template-columns: repeat(2, min(calc(50% - 1rem), 250px));
-  }
-}
-
-@media (min-width: 1050px) {
-  .steps {
-    grid-template-columns: repeat(4, min(calc(25% - 1.5rem), 250px));
-  }
-}
-
-.step {
-  background: var(--white);
-  border: 1px solid var(--lightBorder);
-  border-radius: var(--card-radius);
+.form {
   display: flex;
   flex-direction: column;
-  font-size: 0.75rem;
-  padding: 1rem 1.5rem 1.5rem;
-  text-align: left;
-  box-shadow: 0 2px 4px rgb(14 30 37 / 12%);
+  margin: 0 auto;
+  width: 35ch;
+}
+img {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 35ch;
 }
 
-.stepHeading {
-  font-size: 1rem;
+.form label {
+  color: var(--heading);
+  font-size: 0.625rem;
   font-weight: 600;
-  margin: 0;
+  letter-spacing: 0.2em;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.form label:first-of-type {
+  margin-top: 0;
+}
+
+.form input,
+.form textarea {
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+}
+
+.form textarea {
+  height: 100px;
+}
+
+.button {
+  margin-top:1rem;
+  border:none;
 }
 
 
+.heading,
+.docs {
+  text-align: center;
+}
 </style>
 
 <Layout
-  title="Netlify Feature Tour"
-  description="This is a small site to show the most powerful features of Netlify quickly!"
-  home
+  title="Are you Rachel's biggest fan?"
+  description="Then you've come to the right place. Fill out the form below and claim your free mug!"
 >
-  <main class="steps">
-    <section class="step">
-      <h2 class="stepHeading">Deploy Previews</h2>
-      <p>
-        Every pull request is automatically built in an
-        identical-to-production environment for
-        <strong>painless QA, feedback, and review.</strong>
-      </p>
-      <a href="/deploy-previews" class="button">
-        Learn more <span class="sr-only">about Deploy Previews</span>
-      </a>
-    </section>
+  <main>
+    <h2 class="heading">Rachel -- the coolest girl in the world</h2>
+    <p>
+      If you're here, it's because you love Rachel. You know shes the bomb dot com.
+    </p>
+    <p>
+      She's beautiful, worldly, ambitious, and she loves adventure.
+    </p>
+    <p>
+      Most of all, she loves her family.
+    </p>
+    <p>
+      That's why we're so excited for the first time to offer the one of a kind Rachel mug.
+    </p>
+    <div>
+      <img
+          src="/images/mug.png"
+        />
+    <p>
+      This mug is made only from the highest quality Peruvian ceramic. Buy it once, and it will last you a lifetime.
+    </p>
 
-    <section class="step">
-      <h2 class="stepHeading">Instant Rollbacks</h2>
-      <p>
-        Confidently ship to production with the knowledge that it’s a
-        one-click operation to roll back to a previous version of the site.
-        <strong>Instant disaster recovery!</strong>
-      </p>
-      <a href="/instant-rollbacks" class="button">
-        Learn more
-        <span class="sr-only">about Instant Rollbacks</span>
-      </a>
-    </section>
+    <p>
+      We wanted to make a mug that not only explicitly said "Rachel's #1 fan" but expressed through its construction that this was a mug for Rachel, for the ages.
+    </p>
 
-    <section class="step">
-      <h2 class="stepHeading">Netlify Functions</h2>
-      <p>
-        <strong>Serverless functions are superpowers for web developers!</strong>
-        Securely handle server-like requirements at any scale with no
-        provisioning, scaling, or ops overhead.
-      </p>
-      <a href="/functions" class="button">
-      Learn more
-      <span class="sr-only">about Netlify Functions</span>
-      </a>
-    </section>
+    <p>
+      This mug can be used anywhere, either in your home, or when life takes you for a ride on a horse and buggy.
+    </p>
 
-    <section class="step">
-      <h2 class="stepHeading">Netlify Forms</h2>
-      <p>
-        Handle user input with a single line of code. Netlify Forms allow
-        any HTML form to
-        <strong>
-            accept submissions, send notification emails, and trigger custom events.
-        </strong>
-      </p>
-      <a href="/netlify-forms" class="button">
-        Learn more <span class="sr-only">about Netlify Forms</span>
-      </a>
-    </section>
+    <img src="/images/solo.png" />
+
+    <p>
+      But let's not forget, appreciating Rachel, isn't something you do alone. Rachel is someone you celebrate with your friends and family.
+    </p>
+
+    <p>
+      We encourage you to get not just one for yourself, but get one for your loved ones. Don't be shy, you're all Rachel's #1 fans!
+    </p>
+
+    <img src="/images/group.png" />
+
+    <p>
+      If you've read this far, you're probably wondering how you can get your hands on one of these mugs.
+    </p>
+    <p>
+      All that's between you and your mug is a few questions. Answer below, and you're on your way to celebrating the coolest girl in the world, Rachel!
+    </p>
+    <h2 class="heading">Before getting your mug, a few questions</h2>
+
+    <form
+      class="form"
+      method="POST"
+      name="swag-request"
+      action="/success"
+    >
+    <fieldset>
+      <legend>Your name</legend>
+      <input type="text" id="name" name="name" />
+    </fieldset>
+
+      <fieldset>
+        <legend>Do you agree that Rachel is the coolest girl in the world</legend>
+        
+        <div>
+          <input type="radio" id="yes" name="rachel-cool" value="yes" />
+          <label for="yes">Yes</label>
+        </div>
+
+        <div>
+          <input type="radio" id="yes-obviously-shes-cool" name="rachel-cool" value="yes-obviously-shes-cool" />
+          <label for="yes-obviously-shes-cool">Yes, obviously, there is no one as cool as her</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Is this website a little much for two people that haven't met yet</legend>
+
+        <div>
+          <input type="radio" id="yes" name="website-too-much" value="yes" />
+          <label for="yes">Yes</label>
+        </div>
+
+        <div>
+          <input type="radio" id="yes-obviously-its-sweet" name="website-too-much" value="yes-obviously-its-sweet" />
+          <label for="yes-obviously-its-sweet">Yes, but I think it's sweet :)</label>
+        </div>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Should Rachel and Jason go on a date and see if sparks fly</legend>
+        <div>
+          <input type="radio" id="too-soon" name="date" value="too-soon" />
+          <label for="too-soon">Too soon to tell</label>
+        </div>
+        <div>
+          <input type="radio" id="yes" name="date" value="yes" />
+          <label for="yes">Yes</label>
+        </div>
+        <div>
+          <input type="radio" id="yes-obviously-i-want-sparks" name="date" value="yes-obviously-i-want-sparks" />
+          <label for="yes-obviously-i-want-sparks">Yes, obviously, I want to see sparks fly</label>
+          </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>While we tried to be comprehensive in our form, please leave any remarks not captured by the above here</legend>
+        <div>
+          <textarea name="message"></textarea>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="button">
+        Give me my mug!
+      </button>
+    </form>
   </main>
 </Layout>
