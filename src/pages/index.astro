@@ -29,7 +29,13 @@ img {
   margin-top: 0;
 }
 
-.form input,
+.form fieldset div {
+  /* align-items: center; */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* margin-top: 0.5rem; */
+}
+
 .form textarea {
   color: var(--text);
   font-family: inherit;
@@ -38,6 +44,7 @@ img {
   padding: 0.25rem 0.5rem;
   width: 100%;
 }
+
 
 .form textarea {
   height: 100px;
@@ -138,8 +145,8 @@ img {
         <legend>Is this website a little much for two people that haven't met yet</legend>
 
         <div>
-          <input type="radio" id="yes" name="website-too-much" value="yes" />
-          <label for="yes">Yes</label>
+          <input type="radio" id="yes-too-much" name="website-too-much" value="yes" />
+          <label for="yes-too-much">Yes</label>
         </div>
 
         <div>
@@ -156,8 +163,8 @@ img {
           <label for="too-soon">Too soon to tell</label>
         </div>
         <div>
-          <input type="radio" id="yes" name="date" value="yes" />
-          <label for="yes">Yes</label>
+          <input type="radio" id="yes-ofc" name="date" value="yes" />
+          <label for="yes-ofc">Yes</label>
         </div>
         <div>
           <input type="radio" id="yes-obviously-i-want-sparks" name="date" value="yes-obviously-i-want-sparks" />
